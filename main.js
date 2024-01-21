@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function onRedirect() {
+    if (platform != PLATFORM.ANDROID && platform != PLATFORM.IOS) {
+        window.location = `https://app.dev.twssolutions.us/register?refcode=${referral}`;
+        return;
+    }
+
     try {
         var linkElement = document.getElementById("yourLinkId");
         if (linkElement) {
